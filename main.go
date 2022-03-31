@@ -1,15 +1,15 @@
 package main
 
 import (
-	"algorithms/linkedlist"
+	"algorithms/array"
 	"fmt"
 )
 
 func main() {
-	l := linkedlist.CreateList(1)
-	l.AddNode(2)
-	l.AddNode(3)
-
-	head := l.FindHead()
-	fmt.Println(head)
+	m := array.MakeArray()
+	m.Append(4, 6, 7, 3, 4, 5, 6)
+	m.Reverse()
+	fmt.Println(m)
+	m.RemoveDuplicates()
+	fmt.Println(m)
 }
