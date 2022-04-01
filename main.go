@@ -12,5 +12,5 @@ func main() {
 			hash[v] = 1
 		}
 	}
-	fmt.Println(hash)
+	fmt.Println(hash) //will commited?
 }
