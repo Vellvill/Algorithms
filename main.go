@@ -1,16 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"algorithms/linkedlist"
+	"fmt"
+)
 
 func main() {
-	a := []int{3, 3, 6, 7, 3, 4, 5, 7, 8, 3, 4}
-	hash := make(map[int]int)
-	for _, v := range a {
-		if _, ok := hash[v]; ok {
-			hash[v]++
-		} else {
-			hash[v] = 1
-		}
+	ll := linkedlist.CreateList(1)
+	for i := 0; i <= 10; i++ {
+		ll.AddNode(i)
 	}
-	fmt.Println(hash) //will commited?
+	u := ll.Reverse()
+	fmt.Println(u.ToSlice())
 }

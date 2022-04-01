@@ -64,3 +64,14 @@ func (l *LinkedList) Reverse() *LinkedList {
 	return prev
 
 }
+
+func (l *LinkedList) AddNodeByValue(WhichToAdd, Adder int) {
+	for n := l; n != nil; n = n.next {
+		if n.value == WhichToAdd {
+			new := CreateList(Adder)
+			new.next = n.next
+			n.next = new
+			break
+		}
+	}
+}
