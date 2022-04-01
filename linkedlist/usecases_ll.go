@@ -2,6 +2,7 @@ package linkedlist
 
 type Usecases interface {
 	AddNode(v int)
-	ToSlice(v int) []int
+	ToSlice() []int
 	FindHead() *LinkedList
+	Delete(v int)
 }

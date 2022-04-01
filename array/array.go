@@ -25,13 +25,13 @@ func (a *Array) RemoveDuplicates() {
 	m := make(map[int]int)
 
 	for i, v := range a.array {
-		leng := len(a.array)
 		if _, ok := m[v]; ok {
-			if i == leng {
-				a.array = a.array[:i]
+			if i == len(a.array) {
+				a.array = a.array[:len(a.array)-1]
+				break
 			} else {
 				a.array = append(a.array[:i], a.array[i+1:]...)
-				leng--
+				i++
 			}
 		}
 
