@@ -5,4 +5,7 @@ type Usecases interface {
 	ToSlice() []int
 	FindHead() *LinkedList
 	Delete(v int)
+	Reverse() *LinkedList
+	AddNodeByValue(WhichToAdd, Adder int)
+	AddNodeToBegin(v int)
 }

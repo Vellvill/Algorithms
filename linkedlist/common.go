@@ -75,3 +75,9 @@ func (l *LinkedList) AddNodeByValue(WhichToAdd, Adder int) {
 		}
 	}
 }
+
+func (l *LinkedList) AddNodeToBegin(v int) {
+	new := CreateList(v)
+	new.next = l
+}
+

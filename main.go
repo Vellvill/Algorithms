@@ -10,6 +10,6 @@ func main() {
 	for i := 0; i <= 10; i++ {
 		ll.AddNode(i)
 	}
-	u := ll.Reverse()
-	fmt.Println(u.ToSlice())
+	ll.Reverse()
+	fmt.Println(ll)
 }
