@@ -1,15 +1,16 @@
 package main
 
 import (
-	"algorithms/linkedlist"
-	"fmt"
+	"algorithms/binary_tree"
+	"os"
 )
 
 func main() {
-	ll := linkedlist.CreateList(1)
-	for i := 0; i <= 10; i++ {
-		ll.AddNode(i)
-	}
-	ll.Reverse()
-	fmt.Println(ll)
+	tree := binary_tree.NewTree()
+	tree.Insert(100)
+	tree.Insert(50)
+	tree.Insert(150)
+	tree.Insert(75)
+	tree.Insert(175)
+	binary_tree.PrintTree(os.Stdout, tree.Root, 0, 'M')
 }
