@@ -49,8 +49,7 @@ func Interception(a, b []int) []int {
 		m[v] = 1
 	}
 	for _, v := range b {
-		if j, ok := m[v]
-			ok {
+		if j, ok := m[v]; ok {
 			if j == 1 {
 				res = append(res, v)
 				m[v]++
@@ -58,6 +57,21 @@ func Interception(a, b []int) []int {
 		}
 	}
 	return res
+}
+
+func (a *Array) BinarySearch(t int) bool {
+	first, last := 0, len(a.array)-1
+	for first <= last {
+		mid := (first + last) / 2
+		if a.array[mid] == t {
+			return true
+		} else if t > mid {
+			first = mid + 1
+		} else {
+			last = mid - 1
+		}
+	}
+	return false
 }
 
 func Interception0N2(a, b []int) ([]int, error) {
@@ -86,8 +100,7 @@ func FindSum(a []int, b int) ([]int, error) {
 	m := make(map[int]int)
 	res := make([]int, 0)
 	for i, v := range a {
-		if j, ok := m[v]
-			ok {
+		if j, ok := m[v]; ok {
 			res = append(res, j, i)
 			return res, nil
 		}

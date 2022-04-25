@@ -1,16 +1,14 @@
 package main
 
 import (
-	"algorithms/binary_tree"
-	"os"
+	"algorithms/array"
 )
 
+var custom struct {
+	error
+}
+
 func main() {
-	tree := binary_tree.NewTree()
-	tree.Insert(100)
-	tree.Insert(50)
-	tree.Insert(150)
-	tree.Insert(75)
-	tree.Insert(175)
-	binary_tree.PrintTree(os.Stdout, tree.Root, 0, 'M')
+	a := array.MakeArray()
+	a.Append(1, 2, 3, 4, 5, 6, 7)
 }
