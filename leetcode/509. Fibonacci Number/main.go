@@ -7,7 +7,7 @@ import (
 func main() {
     var a int
     _, _ = fmt.Scan(&a)
-    fib(a)
+    fibRec(a)
 }
 
 //rec
