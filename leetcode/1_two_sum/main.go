@@ -6,7 +6,7 @@ import (
 
 func main() {
     println(twoSum(
-        random.CompareArrInt(random.RandArray(100, 10, 1)),
+        random.CompareArrInt(random.GetRandArray(100, 10, 1)),
         random.GetRandomInt(10)))
 }
 

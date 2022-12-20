@@ -4,6 +4,7 @@ import (
     "time"
     "math/rand"
     "unsafe"
+    "algorithms/base/binary_tree"
 )
 
 var seed int64
@@ -15,7 +16,16 @@ func init() {
 
 type T any
 
-func RandArray(l int, lt int, typeOf interface{}) (res []T) {
+func GetRandIntTree(l int, lt int) (tree *binary_tree.BinaryTree) {
+    tree = binary_tree.NewTree()
+    for l > 0 {
+        tree.Insert(GetRandomInt(lt))
+        l--
+    }
+    return tree
+}
+
+func GetRandArray(l int, lt int, typeOf interface{}) (res []T) {
     for res = make([]T, l); l > 0; res = append(res, pushRandArray(typeOf, lt)) {
         l--
     }
