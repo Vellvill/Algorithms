@@ -1,13 +1,11 @@
 package main
 
 import (
-    "fmt"
+    "algorithms/base/random"
 )
 
 func main() {
-    var a int
-    _, _ = fmt.Scan(&a)
-    fibRec(a)
+    println(fibRec(random.GetRandomInt(50)))
 }
 
 //rec
