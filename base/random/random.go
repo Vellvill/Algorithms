@@ -5,6 +5,7 @@ import (
     "math/rand"
     "unsafe"
     "algorithms/base/binary_tree"
+    "algorithms/base/linkedlist"
 )
 
 var seed int64
@@ -23,6 +24,14 @@ func GetRandIntTree(l int, lt int) (tree *binary_tree.BinaryTree) {
         l--
     }
     return tree
+}
+
+func GetRandomList(l int, lt int) (ll *linkedlist.LinkedList) {
+    list := linkedlist.CreateList(GetRandomInt(lt))
+    for ; l > 0; l-- {
+        list.AddNode(GetRandomInt(lt))
+    }
+    return list
 }
 
 func GetRandArray(l int, lt int, typeOf interface{}) (res []T) {
