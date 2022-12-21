@@ -8,6 +8,7 @@ type T interface {
     *binary_tree.BinaryTree | *binary_tree.BinaryNode
 }
 
+//FIFO
 type queue[Allowed T] struct {
     q []Allowed
 }
