@@ -10,6 +10,10 @@ import (
 
 var seed int64
 
+const (
+    TypeInt = 0
+)
+
 func init() {
     seed = time.Now().UnixNano()
     rand.Seed(seed)
