@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-    fmt.Println(maxSubArray([]int{-2, -4}))
+    fmt.Println(maxSubArray([]int{5, 4, -1, 7, 8}))
 }
 
 func maxSubArray(ar []int) int {
