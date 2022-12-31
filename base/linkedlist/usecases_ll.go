@@ -3,9 +3,9 @@ package linkedlist
 type Usecases interface {
 	AddNode(v int)
 	ToSlice() []int
-	FindHead() *LinkedList
+	FindHead() *ListNode
 	Delete(v int)
-	Reverse() *LinkedList
+	Reverse() *ListNode
 	AddNodeByValue(WhichToAdd, Adder int)
 	AddNodeToBegin(v int)
 }
