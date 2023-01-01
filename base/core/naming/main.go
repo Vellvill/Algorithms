@@ -30,7 +30,7 @@ func main() {
 			_ = file.Close()
 		}()
 
-		_, _ = file.Write([]byte(fmt.Sprintf("package main\n\n//enable for random structs\nimport _ \"algorithms/base/random\"\n\n//%s\nfunc main(){\n\n}", s)))
+		_, _ = file.Write([]byte(fmt.Sprintf("package main\n\n//enable for random structs\nimport _ \"algorithms/base/core/random\"\n\n//%s\nfunc main(){\n\n}", s)))
 	} else {
 		getInfoFromLeetcodeURL()
 	}
