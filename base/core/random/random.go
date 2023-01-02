@@ -3,6 +3,7 @@ package random
 import (
 	"algorithms/base/data_structures/binary_tree"
 	"algorithms/base/data_structures/linkedlist"
+	"math"
 	"math/rand"
 	"time"
 	"unsafe"
@@ -103,6 +104,18 @@ func GetArray(l int, lt int, typeOf interface{}) (res []T) {
 		res[l] = pushRandArray(typeOf, lt)
 	}
 	return res
+}
+
+func GetWord() string {
+	words := map[int]string{
+		0: "word",
+		1: "hello",
+		2: "Piterson",
+		3: "GTFO",
+		4: "leetcode",
+		5: "AeZaKmI",
+	}
+	return words[GetInt(math.MaxInt32)%len(words)]
 }
 
 // RotateSlice rotating slice k times to the right

@@ -28,33 +28,41 @@ func main() {
 }
 
 func characterReplacement(s string, k int) int {
-	hash := make(map[byte]int)
-	lenghth := len(s)
-	l, r := 0, 0
-	var longest int
+	mapa := make(map[byte]int)
 
-	for l < lenghth {
-		currL := 0
-		temp := k
-		currChar := s[l]
-		var firstOccusion byte
-		for ; r < lenghth && temp > 0; r++ {
-			if s[r] != currChar {
-				temp--
-				if temp == k-1 {
-					firstOccusion = s[r]
-					hash[s[r]] = r
-				}
-			}
-			currL = max(currL, r-l+1)
-		}
-		longest = max(longest, currL)
-
-		l = hash[firstOccusion]
-
+	type freq struct {
+		b byte
+		f int
 	}
 
-	return longest
+	maxF := freq{}
+
+	for i := 0; i < len(s); i++ {
+		if _, ok := mapa[s[i]]; ok {
+			mapa[s[i]]++
+			if mapa[s[i]] > maxF.f {
+				maxF = freq{
+					b: s[i],
+					f: mapa[s[i]],
+				}
+			}
+		} else {
+			mapa[s[i]] = 1
+		}
+	}
+
+	left, right := 0, len(s)
+
+	for i := 0; k > 0; i++ {
+		if s[i] != maxF.b {
+			k--
+			left++
+		}
+	}
+
+	fmt.Println(string(maxF.b), maxF.f)
+
+	return right - left + 1
 }
 
 func max(m, n int) int {
