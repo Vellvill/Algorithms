@@ -28,5 +28,4 @@ func detectCapitalUse(word string) bool {
 	return word == strings.ToUpper(word) ||
 		word == string(append([]byte(strings.ToUpper(string(word[0]))), strings.ToLower(word[1:])...)) ||
 		word == strings.ToLower(word)
-
 }
