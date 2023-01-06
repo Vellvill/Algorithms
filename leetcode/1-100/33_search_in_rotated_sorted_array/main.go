@@ -2,7 +2,6 @@ package main
 
 //enable for random structs
 import (
-	_ "algorithms/base/random"
 	"fmt"
 )
 
